@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Explorer</title>
+
+  <!-- Google Font for a clean modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">🎬 Movie Explorer</h1>
+
+      <!-- Search bar -->
+      <form id="searchForm" class="search-form">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search for a movie..."
+          autocomplete="off"
+        />
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <!-- Dark / Light mode toggle -->
+      <button id="themeToggle" class="theme-toggle" title="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- ===================== FILTER / SORT BAR ===================== -->
+  <section class="controls">
+    <div class="controls-inner">
+      <select id="genreFilter" class="control-select">
+        <option value="">All Genres</option>
+      </select>
+
+      <select id="sortSelect" class="control-select">
+        <option value="">Sort By</option>
+        <option value="rating-desc">Rating: High to Low</option>
+        <option value="rating-asc">Rating: Low to High</option>
+        <option value="date-desc">Release Date: Newest</option>
+        <option value="date-asc">Release Date: Oldest</option>
+      </select>
+
+      <button id="favoritesBtn" class="control-select favorites-btn">⭐ Favorites</button>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main">
+
+    <!-- Heading that changes based on context (Popular / Search Results / Favorites) -->
+    <h2 id="sectionTitle" class="section-title">Popular Movies</h2>
+
+    <!-- Loading spinner -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Loading movies...</p>
+    </div>
+
+    <!-- Error message -->
+    <div id="errorState" class="state-message hidden">
+      <p>⚠️ Something went wrong. Please check your connection and try again.</p>
+      <button id="retryBtn" class="retry-btn">Retry</button>
+    </div>
+
+    <!-- No results message -->
+    <div id="emptyState" class="state-message hidden">
+      <p>😕 No movies found. Try a different search.</p>
+    </div>
+
+    <!-- Movie cards grid -->
+    <div id="movieGrid" class="movie-grid"></div>
+
+    <!-- Load More button -->
+    <div class="load-more-wrapper">
+      <button id="loadMoreBtn" class="load-more-btn hidden">Load More</button>
+    </div>
+  </main>
+
+  <!-- ===================== MOVIE DETAILS MODAL ===================== -->
+  <div id="movieModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">&times;</button>
+      <div id="modalBody" class="modal-body">
+        <!-- Filled dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Built with HTML, CSS &amp; Vanilla JavaScript · Data from TMDB API</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
