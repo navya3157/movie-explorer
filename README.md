@@ -117,9 +117,4 @@ _Add screenshots here after running the project locally:_
 
 ---
 
-## 💡 Interview Talking Points
 
-- **State management without a framework**: a single `state` object drives what's rendered, similar in spirit to how React state works, but managed manually.
-- **Separation of concerns**: fetch logic, rendering logic, and event handling are split into clearly named functions.
-- **Client-side filter/sort**: genre filtering and sorting are applied on already-fetched data to avoid extra API calls (with a note that a production app might instead pass `with_genres` / `sort_by` params to TMDB's `/discover/movie` endpoint for server-side accuracy across all pages).
-- **Graceful degradation**: every fetch call is wrapped in try/catch, with dedicated loading, error, and empty states so the UI never breaks silently.
