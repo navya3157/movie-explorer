@@ -10,7 +10,7 @@
 ========================================================= */
 
 /* ---------------- CONFIG ---------------- */
-const API_KEY = "YOUR_API_KEY"; // <-- put your TMDB API key here
+const API_KEY = "b59c74891966bf67345158eb7d7e417f"; // <-- put your TMDB API key here
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const PLACEHOLDER_POSTER =
